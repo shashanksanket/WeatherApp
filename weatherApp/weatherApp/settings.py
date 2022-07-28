@@ -40,8 +40,13 @@ INSTALLED_APPS = [
     'users',
     'services',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'django_celery_beat',
+    'django_celery_results'
 ]
+
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_IMPORTS = ('services.tasks')
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -80,7 +85,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'weatherApp.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

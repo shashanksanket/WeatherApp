@@ -28,6 +28,7 @@ class AuthView(APIView):
 		user = authenticate(username=username, password=password)
 		if not user:
 			return Response({'error': 'Invalid Credentials'}, status=HTTP_404_NOT_FOUND)
+		token, _ = Token.objects.get_or_create(user = user)
 		return Response({'token': token.key}, status=HTTP_200_OK)
 
 	def delete(self, request):

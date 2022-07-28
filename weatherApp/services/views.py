@@ -1,11 +1,9 @@
 from django.shortcuts import render
 from .models import City
 from .serializers import CitySerializer
-from rest_framework.response import Response
 from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import permissions
-from django.core.paginator import Paginator
 import requests
 
 def fetchWeatherReport():
