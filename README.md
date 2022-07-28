@@ -1,9 +1,13 @@
 # WeatherApp
 
 pip install -r requirements.txt             //Install dependencies from requirements.txt file
+
 mkvritualenv env-name                       //Setup a virtual enviroment:-
+
 env-name\Scripts\activate                   //Activate your virtuale enviroment
+
 cd weatherApp                               //Go to weatherApp folder
+
 python manage.py runserver                  //Runserver
 
 Start the celery worker using the following command:-
