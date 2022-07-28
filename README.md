@@ -1,24 +1,36 @@
 # WeatherApp
 
-pip install -r requirements.txt             //Install dependencies from requirements.txt file
+#### How to run the app? 
 
-mkvritualenv env-name                       //Setup a virtual enviroment:-
+##### Set up the virtual env
 
-env-name\Scripts\activate                   //Activate your virtuale enviroment
-
+##### Install the libs
+```
+pip install -r requirements.txt             //Install dependencies from requirements.txt file                    
+      
 cd weatherApp                               //Go to weatherApp folder
 
-python manage.py runserver                  //Runserver
+python manage.py runserver                  //runserver
 
-Start the celery worker using the following command:-
+```
 
+##### Make sure we have installed the readis, and it is running on the default port
+
+##### Start the celery worker using the following command:-
+
+```
 celery --app=weatherApp worker -l INFO
+```
 
-Start the beat a celery scheduler [ Note: for the demonstration i added 20sec, but we configure it to 30mins in code ] 
+##### Start the beat a celery scheduler [ Note: for the demonstration i added 20sec, but we configure it to 30mins in code ] 
 
+```
 celery -app=weatherApp beat -l INFO
+```
 
-
+##### Test Creads
+``` 
 Credentials:-
   Username:- admin
   Password:- admin
+```
